@@ -1,0 +1,52 @@
+<aura:component controller="FacilityTypesController">
+    
+    <aura:attribute name="facilityTypes" type="Facility_Type__c[]" />
+    <aura:attribute name="showNewButton" type="String" default="true" />
+    <aura:attribute name="formData" type="Object" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	
+    <aura:registerEvent name="formSubmit" type="c:FormSubmit"/>
+
+    <aura:registerEvent name="PlotMapMarker" type="c:PlotMapMarker" />
+    <aura:method name="resetMap" action="{!c.resetMap}" />
+
+    <aura:registerEvent name="FacilitySelected" type="c:FacilitySelected" />
+    <aura:method name="resetFacilityDetails" action="{!c.resetFacilityDetails}" />
+    	
+    <!-- LAYOUT GRID -->
+    
+	<div class="slds-grid slds-grid--align-center">
+        <form>
+        <lightning:layout horizontalAlign="center">
+            <lightning:layoutItem >
+                <lightning:select name="selectItem" label="FacilityTypes" variant="label-hidden"
+                                  aura:id="facilityTypesDropdown" >
+                    <option value="" text="All Types" />
+                    <aura:iteration items="{!v.facilityTypes}" var="opt">
+                        <option value="{!opt.Id}" text="{!opt.Name}" />
+                    </aura:iteration>    
+                </lightning:select>
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem padding="horizontal-small">
+                <lightning:button label="Search" 
+                                  variant="brand"
+                                  onclick="{!c.onFormSubmit}"/>
+            </lightning:layoutItem> 
+            
+            <!--aura:if isTrue="{!v.showNewButton == 'true'}">
+                <lightning:layoutItem >
+                    <lightning:button label="New"
+                                      variant="neutral"
+                                      onclick="{!c.createNewBoat}"/>
+                </lightning:layoutItem>
+            </aura:if-->
+            
+        </lightning:layout>
+        </form>
+    </div>
+    
+    <!-- / LAYOUT GRID -->
+    
+</aura:component>

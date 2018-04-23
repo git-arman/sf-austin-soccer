@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+	
+	<lightning:card title="Current Facility Map">
+		<div class="currentFacility">
+	        <c:Map aura:id="FacilityMap" />
+	    </div>
+	</lightning:card>
+
+    <div>
+    	<lightning:card title="Current Facility Details">
+            <c:FacilityDetailsTile aura:id="FacilityDetailsTile" />
+   	 	</lightning:card>
+    </div>
+    
+</aura:component>

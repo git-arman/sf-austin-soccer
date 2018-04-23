@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    
+    <aura:attribute name="width"  type="String" default="100%" />
+    <aura:attribute name="height" type="String" default="100%" />
+    <aura:attribute name="location" type="SObject"/> <!-- Latitude/Longitude -->
+    <aura:attribute name="facilityName" type="String" />
+    
+    <aura:attribute name="jsLoaded" type="boolean" default="false"/>
+
+    <aura:handler event="c:PlotMapMarker" action="{!c.plotMapMarker}" />
+    
+    <ltng:require styles="{!$Resource.Leaflet + '/leaflet.css'}" 
+                  scripts="{!$Resource.Leaflet + '/leaflet-src.js'}"
+                  afterScriptsLoaded="{!c.jsLoaded}" /> 
+    
+    <lightning:layout horizontalAlign="spread">
+        <lightning:layoutItem padding="around-small" flexibility="grow">
+            <div aura:id="map" style="{!'width: ' + v.width + '; height: ' + v.height}">
+                <div class="slds-align_absolute-center">Please make a selection</div>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+</aura:component>

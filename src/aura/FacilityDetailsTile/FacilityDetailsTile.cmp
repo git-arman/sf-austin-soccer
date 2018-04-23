@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <aura:handler event="c:FacilitySelected" action="{!c.onFacilitySelected}"/>
+
+    <aura:attribute name="facility" type="Facility__c"/>
+    
+	<lightning:layout horizontalAlign="spread" multipleRows="true">
+        <lightning:layoutItem padding="around-small" flexibility="grow">
+           	<div class="lower-third">
+           		<p> <B>Name: </B> {!v.facility.Name} </p>
+              <p> <B>Description: </B> {!v.facility.Description__c} </p>
+           		<p> <B>Hours: </B> {!v.facility.Hours__c} </p>
+        	</div>
+    	</lightning:layoutItem>
+  	</lightning:layout>
+</aura:component>

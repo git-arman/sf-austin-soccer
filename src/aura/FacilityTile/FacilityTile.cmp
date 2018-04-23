@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute name="facility" type="Facility__c"/>
+    <aura:attribute name="selected" type="Boolean" default="false" />
+    
+    <aura:registerEvent name="FacilitySelect" type="c:FacilitySelect"/>
+    <aura:registerEvent name="FacilitySelected" type="c:FacilitySelected"/>
+    <aura:registerEvent name="PlotMapMarker" type="c:PlotMapMarker"/>
+
+	  <lightning:button label="" class="{! v.selected ? 'tile selected' : 'tile'}" 
+                      onclick="{!c.onFacilityClick}" aura:id="facilityTile" value="{!v.facility.Id}">
+        <div style="{! 'background: url(' + v.facility.Picture__c + ') no-repeat;background-position: center;background-size: cover;' }" class="innertile" >  
+           <div class="lower-third">
+           	 <h1 class="slds-truncate">"{! v.facility.Name}"</h1>
+          </div>
+        </div>
+    </lightning:button>
+</aura:component>

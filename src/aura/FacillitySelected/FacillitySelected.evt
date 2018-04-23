@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Event template" >
+	<aura:attribute name="facility" type="Facility__c" />
+</aura:event>

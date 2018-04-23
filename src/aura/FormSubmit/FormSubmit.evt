@@ -1,0 +1,9 @@
+<!-- Create a FormSubmit event to allow your FacilitySearchForm to pass the selected facility type to the 
+FacilitySearchResults component, which queries Apex and stores the results.
+Handle FormSubmit with a controller action, onFormSubmit, and pass formData.facilityTypeId from the 
+controller to search, a public method on the FacilitySearchResults component. The search function uses a 
+helper function, onSearch(), and controller function, doSearch(), to get the list of facilities. -->
+
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="formData" type="Object"/>
+</aura:event>
