@@ -15,13 +15,13 @@
     <aura:method name="resetFacilityDetails" action="{!c.resetFacilityDetails}" />
     	
     <!-- LAYOUT GRID -->
-    
+
 	<div class="slds-grid slds-grid--align-center">
         <form>
           <lightning:layout horizontalAlign="center">
             <lightning:layoutItem >
                 <lightning:select name="selectItem" label="FacilityTypes" variant="label-hidden"
-                                  aura:id="facilityTypesDropdown" >
+                                  aura:id="facilityTypesDropdown" class="slds-grid slds-grid--align-top">
                     <option value="" text="All Types" />
                     <aura:iteration items="{!v.facilityTypes}" var="opt">
                         <option value="{!opt.Id}" text="{!opt.Name}" />
