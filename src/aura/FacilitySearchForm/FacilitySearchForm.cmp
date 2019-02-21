@@ -18,7 +18,7 @@
     
 	<div class="slds-grid slds-grid--align-center">
         <form>
-        <lightning:layout horizontalAlign="center">
+          <lightning:layout horizontalAlign="center">
             <lightning:layoutItem >
                 <lightning:select name="selectItem" label="FacilityTypes" variant="label-hidden"
                                   aura:id="facilityTypesDropdown" >
@@ -34,16 +34,7 @@
                                   variant="brand"
                                   onclick="{!c.onFormSubmit}"/>
             </lightning:layoutItem> 
-            
-            <!--aura:if isTrue="{!v.showNewButton == 'true'}">
-                <lightning:layoutItem >
-                    <lightning:button label="New"
-                                      variant="neutral"
-                                      onclick="{!c.createNewBoat}"/>
-                </lightning:layoutItem>
-            </aura:if-->
-            
-        </lightning:layout>
+          </lightning:layout>
         </form>
     </div>
     
