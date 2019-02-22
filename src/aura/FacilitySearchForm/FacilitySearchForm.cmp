@@ -1,3 +1,6 @@
+
+<!-- FacilitySearchForm (CHILD) COMPONENT code -->
+
 <aura:component controller="FacilityTypesController">
     
     <aura:attribute name="facilityTypes" type="Facility_Type__c[]" />
@@ -38,6 +41,6 @@
         </form>
     </div>
     
-    <!-- / LAYOUT GRID -->
+    <!-- End: LAYOUT GRID -->
     
 </aura:component>

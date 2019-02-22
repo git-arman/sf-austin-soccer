@@ -1,16 +1,19 @@
+
+<!-- FacilitySearch (PARENT) COMPONENT code -->
+
 <aura:component implements="flexipage:availableForAllPageTypes" access="global">
-    <aura:handler name="formSubmit" event="c:FormSubmit" action="{!c.onFormSubmit}"/>
+
+    <aura:handler name="formSubmit" event="c:FormSubmit" action="{!c.onFormSubmitted}"/>
 
     <div class="findAFacility">
         <lightning:card title="Find a Soccer Facility">
-        	<c:FacilitySearchForm />
+        	<c:FacilitySearchForm />  <!-- CHILD COMPONENT -->
         </lightning:card>
     </div>
     
     <div>
     	<lightning:card title="Matching Facilities">
-            <c:FacilitySearchResults aura:id="FacilitySearchResults" />
+            <c:FacilitySearchResults aura:id="FacilitySearchResults" /> <!-- CHILD Cmp -->
    	 	</lightning:card>
     </div>
-
 </aura:component>
