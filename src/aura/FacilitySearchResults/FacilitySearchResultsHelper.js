@@ -1,3 +1,4 @@
+// FacilitySearchResults (CHILD) HELPER code
 ({
 	onSearch : function(component, facilityTypeId) {
         //alert("onSearch: facilityTypeId="+facilityTypeId);

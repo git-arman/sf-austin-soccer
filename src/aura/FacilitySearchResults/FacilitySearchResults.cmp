@@ -1,18 +1,24 @@
+<!-- FacilitySearchResults CHILD COMPONENT of FacilitySearch (PARENT) COMPONENT
+     FacilitySearchResults PARENT COMPONENT of FacilityTile (CHILD) COMPONENT
+-->
 <aura:component implements="flexipage:availableForAllPageTypes" controller="FacilitySearchResults">
-	<!--p>Create a new FacilityTile component and update your FacilitySearchResults container to
+	<!--
+	Create a new FacilityTile component and update your FacilitySearchResults container to
 	loop through all the results returned from an Apex controller FacilitySearchResults to 
 	display an unfiltered list of every facility.
 	Define the method getFacilities() in FacilitySearchResults, to return search results as described
 	in the business requirements. FacilitySearchResults.cmp displays search results with a 
 	helper method, onSearch(), and displays each result as a FacilityTile component. 
-	</p-->
+	-->
     
     <aura:attribute name="facilities" type="Facility__c[]"/>
-    
+
+    <!-- FacilitySearch (PARENT) CMP calls this CHILD Method -->
     <aura:method name="search" action="{!c.doSearch}" access="public">
         <aura:attribute name="facilityTypeId" type="String" />
     </aura:method>
-    
+
+    <!-- Handles FacilityTile (CHILD) CMP event -->
     <aura:handler name="facilitySelect" event="c:FacilitySelect" action="{!c.onFacilitySelect}"/>
     
     <aura:attribute name="selectedFacilityId" type="String"/>
@@ -21,9 +27,10 @@
         <div class="slds-align_absolute-center">No facilities found</div>
     <aura:set attribute="else">
     	<lightning:layout horizontalAlign="spread" multipleRows="true">
-            <lightning:layoutItem padding="around-small" flexibility="grow">
+            <lightning:layoutItem padding="around-medium" flexibility="grow">
     			<aura:iteration items="{!v.facilities}" var="facility">
-                    <c:FacilityTile facility="{!facility}" selected="{! (facility.Id == v.selectedFacilityId ? true : false)}" />
+                    <c:FacilityTile facility="{!facility}"
+                         selected="{!(facility.Id == v.selectedFacilityId ? true : false)}" />
                 </aura:iteration>
         	</lightning:layoutItem>
         </lightning:layout>
