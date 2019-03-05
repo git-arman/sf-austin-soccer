@@ -1,4 +1,3 @@
-
 <!-- FacilitySearch (PARENT) COMPONENT code -->
 
 <aura:component implements="flexipage:availableForAllPageTypes" access="global">
