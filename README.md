@@ -5,4 +5,4 @@ Demonstrates Salesforce Lightning code example, mainly the interaction between d
 Page URL:  https://austin-soccer-dev-ed.my.salesforce.com/
 
 Username: guest@sf-soccer.com
-Pwd:      Austin2019
+Pwd:      AustinSoccer2019
